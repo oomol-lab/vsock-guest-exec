@@ -1,0 +1,4 @@
+*.c text eol=lf diff=cpp
+*.sh text eol=lf
+*.ac text eol=lf
+*.am text eol=lf

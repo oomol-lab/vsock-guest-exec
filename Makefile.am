@@ -1,0 +1,3 @@
+AUTOMAKE_OPTIONS=foreign
+bin_PROGRAMS=vsock_guest_exec
+vsock_guest_exec_SOURCES=main.c

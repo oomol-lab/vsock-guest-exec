@@ -1,0 +1,32 @@
+name: Release
+on:
+  push: 
+    tags: 
+      - v*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Autogen
+        run: ./autogen.sh
+      
+      - name: Configure
+        run: ./configure
+      
+      - name: make
+        run: make dist
+      
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            *.tar.gz
+          generate_release_notes: true
+          draft: false
+          prerelease: false
+          fail_on_unmatched_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
