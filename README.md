@@ -6,4 +6,16 @@ The program is designed to be executed during the initrd stage in order to simul
 
 The `vsock_guest_exec` accepts commands composed of up to 2048 bytes at a time and automatically terminates after the command ends. Before running, please ensure that the host is listening to the corresponding socket file.
 
+EXAMPLES:
+
+```shell
+$ ./vsock_guest_exec 1:2049 # cid is 2, vsock port is 2049
+$ ./vsock_guest_exec -1: # cid set to -1 (VMADDR_CID_ANY), vsock port is
+default(1024)
+$ ./vsock_guest_exec :1025 # vsock port set to 1025, cid is default(2)
+
+# Invalid Params
+$ ./vsock_guest_exec foo:bar # cid is default(2), vsock port is default(1024)
+```
+
 [ignition]: https://coreos.github.io/ignition/
