@@ -20,7 +20,7 @@ jobs:
         run: make dist
       
       - name: sha256sum
-        run: sha256sum vsock-guest-exec-0.0.1.tar.gz LICENSE > SHASUMS256.txt
+        run: sha256sum *.tar.gz LICENSE > SHASUMS256.txt
       
       - name: Release
         uses: softprops/action-gh-release@v1
