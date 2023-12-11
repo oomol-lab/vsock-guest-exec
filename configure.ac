@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.71])
-AC_INIT([Vsock Guest Exec], [0.0.1], [vsock_guest_exec@bugs.cc], [vsock_guest_exec])
+AC_INIT([Vsock Guest Exec], [0.0.1], [vsock_guest_exec@bugs.cc], [vsock-guest-exec])
 AC_CONFIG_SRCDIR([main.c])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE
