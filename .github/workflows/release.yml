@@ -15,22 +15,16 @@ jobs:
       
       - name: Configure
         run: ./configure
-      
+
       - name: make
-        run: make dist
-      
-      - name: sha256sum
-        run: sha256sum *.tar.gz LICENSE > SHASUMS256.txt
-      
+        run: make
+
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: |
-            *.tar.gz
-            SHASUMS256.txt
           generate_release_notes: true
           draft: false
           prerelease: false
-          fail_on_unmatched_files: true
+          fail_on_unmatched_files: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
