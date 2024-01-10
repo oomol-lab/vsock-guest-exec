@@ -1,2 +1,5 @@
 words:
   - vsock
+  - VMADDR
+  - sockfd
+  - recv
